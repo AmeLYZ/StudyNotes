@@ -21,6 +21,17 @@ git config --global user.email "<your email address>"
 ```
 
 ## 常用命令
+### 建立本地仓库
+- 使用本地文件夹
+```
+cd <path>
+git init
+```
+- 克隆远程仓库
+```
+git clone <the web URL>
+```
+
 ### 工作流  
 将改动提交到本地`HEAD`
 ```
@@ -29,6 +40,7 @@ git add .  # 提交所有改动
 
 git commit -m "<tips>"
 ```
+
 ### 推送改动
 ```
 git push origin master
