@@ -27,7 +27,6 @@ yum install 'Development tools'
 ```
 
 ## python配置
----
 ### 安装pip
 ```
 yum list|grep pip
@@ -94,7 +93,6 @@ ps -ef|grep uwsgi  #查看进程
 
 
 ## 安装JDK
----
 - 检测原有JDK
 ```
 rpm -qa|grep jdk
@@ -126,7 +124,6 @@ Java HotSpot(TM) Client VM (build 25.131-b11, mixed mode)
 ```
 
 ## 安装Nginx
----
 - 安装Nginx
 ```
 yum install nginx
@@ -153,7 +150,6 @@ service nginx reload
 ```
 
 ## 安装apache
----
 - 安装
 ```
 yum list|grep httpd  #查看是否可用
@@ -191,7 +187,6 @@ chkconfig httpd on  #设置开机自动启动
 ```
 
 ## 安装mysql
----
 - 安装  
 https://dev.mysql.com/downloads/repo/yum/ 查询yum地址 以及官方安装指导
 ```
@@ -279,12 +274,10 @@ db.create_all()
 ```
 
 ## 安装Supervisor
----
 进程守护用
 https://blog.csdn.net/yanghuan313/article/details/69214889
 
 ## 常用命令
----
 > - 系统
 ```
 uname -a  #查看版本
