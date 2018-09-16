@@ -1,4 +1,35 @@
 # git学习笔记
 > 参考链接
+- [Github简明教程](https://www.runoob.com/w3cnote/git-guide.html)
+- [Github详解](https://blog.csdn.net/Hanani_Jia/article/details/77950594)
+- [Github教程](https://blog.csdn.net/rj597306518/article/details/71307757)
+
+## 配置
+### 安装Git
+下载[Git for windows](http://msysgit.github.io/)
+### 配置本地ssh
+```Bash
+ssh-keygen -t rsa -C "<your email address>"
+```
+将生成的`id_rsa.pub`内容复制到  
+GitHub->Settings->SSH and GPG keys->New SSH key  
+中 然后在git Bash 里设置账号
+```Bash
+ssh -T git@github.com
+git config --global user.name "<your name>"
+git config --global user.email "<your email address>"
+```
 
 ## 常用命令
+### 工作流  
+将改动提交到本地`HEAD`
+```
+git add <filename>  # 提交改动
+git add .  # 提交所有改动
+
+git commit -m "<tips>"
+```
+### 推送改动
+```
+git push origin master
+```
