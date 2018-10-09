@@ -12,7 +12,7 @@
 
 ## 文件传输
 - 查看开放的端口
-```
+```Bash
 netstat -ntlp
 ```
 - 生成SSH密钥文件
@@ -22,8 +22,27 @@ netstat -ntlp
 - FileZilla *编辑-设置-SFTP* 中加载SSH 连接服务器
 
 ## 安装依赖
-```
+```Bash
 yum install 'Development tools'
+```
+
+## 基础配置
+### 防火墙 firwall--cmd
+- 安装
+```Bash
+yum install firewalld
+```
+- 命令
+```
+firewall-cmd --zone=public --add-port=8080-8081/tcp --permanent //永久开启某个端口
+firewall-cmd --zone=public --add-port=8080-8081/tcp //临时开启某个端口
+firewall-cmd --reload  //加载设置
+firewall-cmd --zone=public --list-ports --permanent //端口空格隔开 例如 8080-8081/tcp 8388/tcp 80/tcp
+firewall-cmd --query-port=443/tcp  //检查端口占用情况
+systemctl start firewalld.service  //开启服务
+systemctl stop firewalld.service  //关闭防火墙
+systemctl enable firewalld.service  //开机自动启动
+systemctl disable firewalld.service  //关闭开机制动启动
 ```
 
 ## python配置
