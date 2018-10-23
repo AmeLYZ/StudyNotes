@@ -34,7 +34,7 @@ yum install psmisc
 ```
 
 ### yum-config-manager
-```
+```Bash
 yum install yum-utils
 ```
 
@@ -44,7 +44,7 @@ yum install yum-utils
 yum install firewalld
 ```
 - 命令
-```
+```Bash
 firewall-cmd --zone=public --add-port=8080-8081/tcp --permanent //永久开启某个端口
 firewall-cmd --zone=public --add-port=8080-8081/tcp //临时开启某个端口
 firewall-cmd --reload  //加载设置
