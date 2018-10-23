@@ -59,6 +59,7 @@ systemctl disable firewalld.service  //关闭开机制动启动
 ## python配置
 ### 安装pip
 ```
+yum install epel-release
 yum list|grep pip
 yum install python2-pip.noarch
 ```
