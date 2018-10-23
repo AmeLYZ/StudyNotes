@@ -21,12 +21,23 @@ netstat -ntlp
 - 设置安全组开放22端口
 - FileZilla *编辑-设置-SFTP* 中加载SSH 连接服务器
 
-## 安装依赖
+
+## 基础配置
+### 安装依赖
 ```Bash
 yum install 'Development tools'
 ```
 
-## 基础配置
+### killall
+```bash
+yum install psmisc
+```
+
+### yum-config-manager
+```
+yum install yum-utils
+```
+
 ### 防火墙 firwall--cmd
 - 安装
 ```Bash
