@@ -1,0 +1,9 @@
+# Gradient descent
+https://www.jianshu.com/p/c7e642877b0e 
+
+# answer
+https://blog.csdn.net/ccblogger?t=1
+
+# notes
+https://www.cnblogs.com/jianxinzhou/category/609166.html
+https://www.cnblogs.com/yangmang/category/936405.html 
