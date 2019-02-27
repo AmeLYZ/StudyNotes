@@ -1,3 +1,4 @@
+import numpy as np
 import scipy.optimize as opt
 import lrCostFunction as lCF
 from sigmoid import *
@@ -28,8 +29,20 @@ def one_vs_all(X, y, num_labels, lmd):
         #       function. It is okay to use a for-loop (for c in range(num_labels) to
         #       loop over the different classes
         #
-
-
+        
+        y_t = (y % 10 == i) + 0
+        
+        initial_theta = np.zeros(X.shape[1])
+        
+        def cost_func(t):
+            return lCF.lr_cost_function(t, X, y_t, lmd)[0]
+        
+        
+        def grad_func(t):
+            return lCF.lr_cost_function(t, X, y_t, lmd)[1]
+        
+        temp = opt.fmin_bfgs(f=cost_func, fprime=grad_func, x0=initial_theta, maxiter=400, full_output=True, disp=False)
+        all_theta[i], cost, unused = temp[0], temp[1], temp[2:]
 
         # ============================================================    
         print('Done')

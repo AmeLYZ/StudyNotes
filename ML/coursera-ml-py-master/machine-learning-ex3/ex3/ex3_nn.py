@@ -33,7 +33,8 @@ selected = X[rand_indices[0:100], :]
 
 dd.display_data(selected)
 
-input('Program paused. Press ENTER to continue')
+raw_input('Program paused. Press ENTER to continue')
+
 
 # ===================== Part 2: Loading Parameters =====================
 # In this part of the exercise, we load some pre-initiated
@@ -45,6 +46,7 @@ data = scio.loadmat('ex3weights.mat')
 theta1 = data['Theta1']
 theta2 = data['Theta2']
 
+"""
 # ===================== Part 3: Implement Predict =====================
 # After training the neural network, we would like to use it to predict
 # the labels. You will now implement the "predict" function to use the
@@ -55,7 +57,7 @@ pred = pd.predict(theta1, theta2, X)
 
 print('Training set accuracy: {}'.format(np.mean(pred == y)*100))
 
-input('Program paused. Press ENTER to continue')
+raw_input('Program paused. Press ENTER to continue')
 
 # To give you an idea of the network's output, you can also run
 # thru the examples one at a time to see what it is predicting
@@ -91,3 +93,4 @@ for i in range(m):
     s = input('Paused - press ENTER to continue, q + ENTER to exit: ')
     if s == 'q':
         break
+"""

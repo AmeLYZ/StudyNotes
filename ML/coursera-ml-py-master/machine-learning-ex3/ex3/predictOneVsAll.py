@@ -22,5 +22,8 @@ def predict_one_vs_all(all_theta, X):
     #        max element, for more information see 'np.argmax' function.
     #
     
+    h = np.dot(X, np.transpose(all_theta))
+    p = np.argmax(h, axis=1)
+    p[np.where(p == 0)] = 10
 
     return p
