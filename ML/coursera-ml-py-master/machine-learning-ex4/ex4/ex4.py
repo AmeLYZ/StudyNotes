@@ -37,7 +37,7 @@ selected = X[rand_indices[0:100], :]
 
 dd.display_data(selected)
 
-input('Program paused. Press ENTER to continue')
+raw_input('Program paused. Press ENTER to continue')
 
 # ===================== Part 2: Loading Parameters =====================
 # In this part of the exercise, we load some pre-initiated
@@ -50,6 +50,7 @@ theta1 = data['Theta1']
 theta2 = data['Theta2']
 
 nn_params = np.concatenate([theta1.flatten(), theta2.flatten()])
+
 
 # ===================== Part 3: Compute Cost (Feedforward) =====================
 # To the neural network, you should first start by implementing the
@@ -73,8 +74,9 @@ cost, grad = ncf.nn_cost_function(nn_params, input_layer_size, hidden_layer_size
 
 print('Cost at parameters (loaded from ex4weights): {:0.6f}\n(This value should be about 0.287629)'.format(cost))
 
-input('Program paused. Press ENTER to continue')
+raw_input('Program paused. Press ENTER to continue')
 
+"""
 # ===================== Part 4: Implement Regularization =====================
 # Once your cost function implementation is correct, you should now
 # continue to implement the regularization with the cost.
@@ -89,7 +91,7 @@ cost, grad = ncf.nn_cost_function(nn_params, input_layer_size, hidden_layer_size
 
 print('Cost at parameters (loaded from ex4weights): {:0.6f}\n(This value should be about 0.383770)'.format(cost))
 
-input('Program paused. Press ENTER to continue')
+raw_input('Program paused. Press ENTER to continue')
 
 # ===================== Part 5: Sigmoid Gradient =====================
 # Before you start implementing the neural network, you will first
@@ -103,7 +105,7 @@ g = sg.sigmoid_gradient(np.array([-1, -0.5, 0, 0.5, 1]))
 
 print('Sigmoid gradient evaluated at [-1  -0.5  0  0.5  1]:\n{}'.format(g))
 
-input('Program paused. Press ENTER to continue')
+raw_input('Program paused. Press ENTER to continue')
 
 # ===================== Part 6: Initializing Parameters =====================
 # In this part of the exercise, you will be starting to implement a two
@@ -133,7 +135,7 @@ print('Checking Backpropagation ... ')
 lmd = 0
 cng.check_nn_gradients(lmd)
 
-input('Program paused. Press ENTER to continue')
+raw_input('Program paused. Press ENTER to continue')
 
 # ===================== Part 8: Implement Regularization =====================
 # Once your backpropagation implementation is correct, you should now
@@ -150,7 +152,7 @@ debug_cost, _ = ncf.nn_cost_function(nn_params, input_layer_size, hidden_layer_s
 
 print('Cost at (fixed) debugging parameters (w/ lambda = {}): {:0.6f}\n(for lambda = 3, this value should be about 0.576051)'.format(lmd, debug_cost))
 
-input('Program paused. Press ENTER to continue')
+raw_input('Program paused. Press ENTER to continue')
 
 # ===================== Part 9: Training NN =====================
 # You have now implemented all the code necessary to train a neural
@@ -175,7 +177,7 @@ nn_params, *unused = opt.fmin_cg(cost_func, fprime=grad_func, x0=nn_params, maxi
 theta1 = nn_params[:hidden_layer_size * (input_layer_size + 1)].reshape(hidden_layer_size, input_layer_size + 1)
 theta2 = nn_params[hidden_layer_size * (input_layer_size + 1):].reshape(num_labels, hidden_layer_size + 1)
 
-input('Program paused. Press ENTER to continue')
+raw_input('Program paused. Press ENTER to continue')
 
 # ===================== Part 10: Visualize Weights =====================
 # You can now 'visualize' what the neural network is learning by
@@ -186,7 +188,7 @@ print('Visualizing Neural Network...')
 
 dd.display_data(theta1[:, 1:])
 
-input('Program paused. Press ENTER to continue')
+raw_input('Program paused. Press ENTER to continue')
 
 # ===================== Part 11: Implement Predict =====================
 # After the training the neural network, we would like to use it to predict
@@ -198,4 +200,5 @@ pred = pd.predict(theta1, theta2, X)
 
 print('Training set accuracy: {}'.format(np.mean(pred == y)*100))
 
-input('ex4 Finished. Press ENTER to exit')
+raw_input('ex4 Finished. Press ENTER to exit')
+"""

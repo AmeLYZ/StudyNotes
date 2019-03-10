@@ -46,7 +46,7 @@ data = scio.loadmat('ex3weights.mat')
 theta1 = data['Theta1']
 theta2 = data['Theta2']
 
-"""
+
 # ===================== Part 3: Implement Predict =====================
 # After training the neural network, we would like to use it to predict
 # the labels. You will now implement the "predict" function to use the
@@ -62,7 +62,7 @@ raw_input('Program paused. Press ENTER to continue')
 # To give you an idea of the network's output, you can also run
 # thru the examples one at a time to see what it is predicting
 
-
+"""
 def getch():
     import termios
     import sys, tty
@@ -78,6 +78,7 @@ def getch():
         return ch
 
     return _getch()
+"""
 
 # Randomly permute examples
 rp = np.random.permutation(range(m))
@@ -90,7 +91,7 @@ for i in range(m):
     pred = pd.predict(theta1, theta2, example)
     print('Neural network prediction: {} (digit {})'.format(pred, np.mod(pred, 10)))
 
-    s = input('Paused - press ENTER to continue, q + ENTER to exit: ')
+    s = raw_input('Paused - press ENTER to continue, q + ENTER to exit: ')
     if s == 'q':
         break
-"""
+

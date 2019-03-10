@@ -47,10 +47,37 @@ def nn_cost_function(nn_params, input_layer_size, hidden_layer_size, num_labels,
     #               and theta2_grad from Part 2.
     #
 
-
-
+    # Part 1
+    h = np.eye(10)
+    y = h[y-1, :]
+    
+    a1 = np.c_[np.ones(m), X]
+    
+    z2 = np.dot(a1, np.transpose(theta1))
+    a2 = np.c_[np.ones(z2.shape[0]), sigmoid(z2)]
+    
+    a3 = sigmoid(np.dot(a2, np.transpose(theta2)))
+    
+    cost = -1./m * np.sum(y * np.log(a3) + (1 - y) * np.log(1-a3))
+    cost += lmd/(2.*m) * (np.sum(theta1[:, 1:]**2) + np.sum(theta2[:, 1:]**2))
+    
+    # Part 2
+    delta3 = a3 - y
+    delta2 = np.dot(delta3, theta2)[:, 1:] * sigmoid(z2)
+    
+    delta_1 = np.zeros(theta1.shape)
+    delta_2 = np.zeros(theta2.shape)
+    
+    delta_1 = delta_1 + np.dot(np.transpose(delta2), a1)  # (25L, 401L)
+    delta_2 = delta_2 + np.dot(np.transpose(delta3), a2)  # (10L, 26L)
+    
+    theta1_grad = (1./m * delta_1) + (lmd/m * theta1)
+    theta2_grad = (1./m * delta_2) + (lmd/m * theta2)
+    
+    theta1_grad[:, 1] = theta1_grad[:, 1] - (lmd/m * (theta1[:, 1]))
+    theta2_grad[:, 1] = theta2_grad[:, 1] - (lmd/m * (theta2[:, 1]))
     # ====================================================================================
     # Unroll gradients
     grad = np.concatenate([theta1_grad.flatten(), theta2_grad.flatten()])
-
+    
     return cost, grad

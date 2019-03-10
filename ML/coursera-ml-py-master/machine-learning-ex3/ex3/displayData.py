@@ -42,5 +42,5 @@ def display_data(x):
     plt.figure()
     plt.imshow(display_array, cmap='gray', extent=[-1, 1, -1, 1])
     plt.axis('off')
-    plt.savefig('Dataset.png', dpi=300)
+    # plt.savefig('Dataset.png', dpi=300)
     plt.show()

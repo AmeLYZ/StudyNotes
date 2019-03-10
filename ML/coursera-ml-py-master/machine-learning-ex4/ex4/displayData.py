@@ -7,7 +7,7 @@ def display_data(x):
 
     # Set example_width automatically if not passed in
     example_width = np.round(np.sqrt(n)).astype(int)
-    example_height = (n / example_width).astype(int)
+    example_height = (np.dot(1, n) / example_width).astype(int)
 
     # Compute the number of items to display
     display_rows = np.floor(np.sqrt(m)).astype(int)
@@ -42,3 +42,4 @@ def display_data(x):
     plt.figure()
     plt.imshow(display_array, cmap='gray', extent=[-1, 1, -1, 1])
     plt.axis('off')
+    plt.show()
