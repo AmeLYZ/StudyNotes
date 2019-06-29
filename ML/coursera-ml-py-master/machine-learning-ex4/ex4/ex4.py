@@ -76,7 +76,7 @@ print('Cost at parameters (loaded from ex4weights): {:0.6f}\n(This value should 
 
 raw_input('Program paused. Press ENTER to continue')
 
-"""
+
 # ===================== Part 4: Implement Regularization =====================
 # Once your cost function implementation is correct, you should now
 # continue to implement the regularization with the cost.
@@ -93,6 +93,8 @@ print('Cost at parameters (loaded from ex4weights): {:0.6f}\n(This value should 
 
 raw_input('Program paused. Press ENTER to continue')
 
+
+
 # ===================== Part 5: Sigmoid Gradient =====================
 # Before you start implementing the neural network, you will first
 # implement the gradient for the sigmoid function. You should complete the
@@ -106,6 +108,7 @@ g = sg.sigmoid_gradient(np.array([-1, -0.5, 0, 0.5, 1]))
 print('Sigmoid gradient evaluated at [-1  -0.5  0  0.5  1]:\n{}'.format(g))
 
 raw_input('Program paused. Press ENTER to continue')
+
 
 # ===================== Part 6: Initializing Parameters =====================
 # In this part of the exercise, you will be starting to implement a two
@@ -154,6 +157,7 @@ print('Cost at (fixed) debugging parameters (w/ lambda = {}): {:0.6f}\n(for lamb
 
 raw_input('Program paused. Press ENTER to continue')
 
+"""
 # ===================== Part 9: Training NN =====================
 # You have now implemented all the code necessary to train a neural
 # network. To train your neural network, we will now use 'opt.fmin_cg'.
