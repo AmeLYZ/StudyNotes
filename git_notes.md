@@ -7,6 +7,7 @@
 ## 配置
 ### 安装Git
 下载[Git for windows](http://msysgit.github.io/)
+
 ### 配置本地ssh
 ```Bash
 ssh-keygen -t rsa -C "<your email address>"
@@ -18,6 +19,16 @@ GitHub->Settings->SSH and GPG keys->New SSH key
 ssh -T git@github.com
 git config --global user.name "<your name>"
 git config --global user.email "<your email address>"
+```
+
+### 设置代理
+走代理可以显著提升下载速度
+```Bash
+# 只对github.com
+git config --global http.https://github.com.proxy socks5://127.0.0.1:<proxy port number>
+
+# 取消代理
+git config --global --unset http.https://github.com.proxy)
 ```
 
 ## 常用命令
