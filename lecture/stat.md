@@ -35,6 +35,24 @@ Multicollinearity occurs when an explanatory variable is predictable with anothe
 - Outlier  
 
 ## Maximum Likelihood Method  
+It's alternative to least squares.  
+The assumption is $ f(\epsilon_i)={{1}\over{\sqrt{2\pi\sigma{^2_\epsilon}}}}e^{-{{1}\over{2\sigma{^2_\epsilon}}}\epsilon{^2_i}} $, in which $ \epsilon_i $ is the error term in the linear classical regression model.  
+- Likelihood function:  
+$$ L(\beta,\sigma{^2_\epsilon}|\epsilon)=\Pi{^n_{i=1}}{{1}\over{\sqrt{2\pi\sigma{^2_\epsilon}}}}e^{-{{1}\over{2\sigma{^2_\epsilon}}}\epsilon{^2_i}}=\Pi{^n_{i=1}}{{1}\over{\sqrt{2\pi\sigma{^2_\epsilon}}}}e^{-{{1}\over{2\sigma{^2_\epsilon}}}(y_i-\Sigma_jx_{ij}\beta_j)^2} $$
+- Log-likelihood:  
+$$ l(\beta,\sigma{^2_\epsilon})=const.-{{n}\over{2}}\log(\sigma{^2_\epsilon})-(y-X\beta)^T(y-X\beta)/(2\sigma{^2_\epsilon}) $$  
+- Fitst order condition for the log-likelihood:  
+$$ s(\beta)={{\partial l}\over{\partial\beta}}=-{{1}\over{\sigma{^2_\epsilon}}}(X^Ty-X^TX\beta)=0 $$  
+$$ s(\sigma{^2_\epsilon})=-{{{n}\over{2\sigma{^2_\epsilon}}}}+{{(y-X\beta)^T(y-X\beta)}\over{2\sigma{^4_\epsilon}}}=0 $$
+- ML estimator:  
+$$ \hat \beta_{ML}=(X^TX)^{-1}X^Ty$$  
+$$ \hat \sigma{^2_{\epsilon,ML}}={{e^Te}\over{n}}$$
+
+### Likelihood Ratio Test  
+$$ \lambda={{L(\theta_0)}\over{L(\hat \theta_{ML})}}={{L(\theta_0)}\over{L(\hat \theta)}} $$  
+- Likelihood ratio test:  
+$$ LR=-2\ln(\lambda)=-2(l(\theta_0)-l(\hat \theta_0)) $$
+   - Property: $ LR\sim\chi^2(k) $
 
 
 ## Model Selection  
@@ -75,9 +93,9 @@ If the estimated value $ x $ is below or above the critical values, the null hyp
 ### One-Tailed Test  
 Altlernative hypothesis is $ x>\mu $ or $ x<\mu $ .  
 
-### Sighnificanve Level: $ \alpha $  
+### Sighnificanve Level: $\alpha$  
 
-## $ t $-test  
+## $t$-test  
 If the variance of the disturbances is known, standardized estimated values follow the normal distribution $ {{\widehat{\beta}_i-\beta_i}\over{\sigma_{\beta_i}}}\sim{N(0,1)} $ .  
 If the variance is unknown, $ test={{\widehat{\beta}_i-\beta_i}\over{s_{\widehat{\beta}_i}}}={{{\widehat{\beta}_i-\beta_i}\over{\sigma_{\beta_i}}}\over{{s_{\beta_i}}\over{\sigma_{\beta_i}}}}\sim{t(n-k)} $ (**$ t $-destribution** with $ n-k $ degrees of freedom).  
 
