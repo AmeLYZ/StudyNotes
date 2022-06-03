@@ -1,5 +1,5 @@
 # 1. Linear Regression  
-
+$$ y=\beta X+\epsilon$$
 ## Estimation of the Parameter  
 ### BLUE: Best Linear Unbiased Estimator  
 - Unbiasedness  
