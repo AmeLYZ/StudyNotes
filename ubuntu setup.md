@@ -1,3 +1,6 @@
+> Ref
+- [Ubuntu的Linux内核安装与切换](https://zhaoxuhui.top/blog/2021/02/20/ubuntu-linux-kernel-installation.html)
+
 # Create a new acount  
 TBD  
 
@@ -15,16 +18,21 @@ vi /etc/hostname
 vi /etc/hosts
 ```
 
+# Change the Keyboard Format  
+```bash
+sudo dpkg-reconfigure keyboard-configuration
+```
+
 # Install tools & packages  
 ## Network tool  
 - Install 
-```
+```bash
 sudo apt install net-tools
 sudo apt install traceroute  # route trace
 sudo apt install ssh
 ```
 - Command  
-```
+```bash
 # check network info
 ifconfig 
 
@@ -36,21 +44,57 @@ curl ifconfig.me
 curl cip.cc  
 ```
 
+## Curl  
+- Install  
+```bash
+sudo apt install curl
+```
+- Command  
+```bash
+curl <options> <URL>
+```
 ## SSH tool  
 - Install  
-```
+```bash
 sudo apt install ssh
 ```
 
+## Device manager  
+- Install  
+```bash
+sudo apt instal hwinfo
+```
+- Launch  
+   1. Terminal  
+   ```bash
+   hwinfo --short
+   ```
+   2. GUI  
+   Search software "hardinfo"
+
+## Ubuntu Kernel  Upgrade Utility (ukuu)  
+Ukuu is a tool to install and upgrade Linux kernel.  
+- Install  
+While the licence of `ukuu` is no longer freely provided, we need to download the `.deb` from github and install it.
+```bash
+wget https://github.com/teejee2008/ukuu/releases/download/v18.9.1/ukuu-v18.9.1-amd64.deb
+sudo dpkg -i ukuu-v18.9.1-amd64.deb
+``` 
+- Launch  
+```bash
+sudo ukuu-gek  # desktop GUI
+sudo ukuu  # server CLI
+```
+
 ## Different between `apt` / `apt-get` / `yum`  
-`yum` is for RedHat packages "rpm".  
+`yum` is for RedHat packages `rpm`.  
 ```bash
 yum install <pkg>
 yum remove <pkg>
 yum update <pkg>
 ```
 
-`apt-get` is for debian packages "deb".  
+`apt-get` is for debian packages `deb`.  
 ```bash
 apt-get install <pkg>
 apt-get remove <pkg>
@@ -82,4 +126,39 @@ Show the desktop.
 Change the workspace  
 
 # Bash command & shortcut  
-- Ctrl + Shift + c/v  
+- Command  
+```bash
+# system
+uname -srm  # show kernal name + release version + hardware framework name
+dpkg --get-selections | grep linux  # show all kernals
+
+lshw  # show hardware
+lsusb  # show usb devices
+
+mkdir <dir name>  # make new directory
+touch <file name>  # make new file 
+cp <src> <dst>  # copy scr to dst
+mv <src> <dst>  # move or rename file from src to dst
+
+
+# vi
+vi <file name>  # open or create file
+i  # insert
+
+h  # left move
+l  # right move
+j  # down move
+k  # up move
+
+Esc  # command mode
+:w  # write file
+:wq  # write and quit
+:q  # quit
+
+# nano
+nano <file name>  # open or create file
+ctrl + x  # exit
+```  
+
+- Shortcut  
+   1. Ctrl + Shift + c/v  
