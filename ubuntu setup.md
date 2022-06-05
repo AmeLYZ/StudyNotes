@@ -1,5 +1,7 @@
 > Ref
 - [Ubuntu的Linux内核安装与切换](https://zhaoxuhui.top/blog/2021/02/20/ubuntu-linux-kernel-installation.html)
+- [Ukuu install error](https://askubuntu.com/questions/1074350/unable-to-install-ukuu-kernel-updater)  
+
 
 # Create a new acount  
 TBD  
@@ -135,6 +137,7 @@ dpkg --get-selections | grep linux  # show all kernals
 lshw  # show hardware
 lsusb  # show usb devices
 
+pwd  # show working directory
 mkdir <dir name>  # make new directory
 touch <file name>  # make new file 
 cp <src> <dst>  # copy scr to dst
