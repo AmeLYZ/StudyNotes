@@ -1,7 +1,8 @@
 > Ref
 - [Ubuntu的Linux内核安装与切换](https://zhaoxuhui.top/blog/2021/02/20/ubuntu-linux-kernel-installation.html)
 - [Ukuu install error](https://askubuntu.com/questions/1074350/unable-to-install-ukuu-kernel-updater)  
-- [Ubuntu Bluetooth connection suspend](https://zhongguo.eskere.club/%E5%A6%82%E4%BD%95%E4%BF%AE%E5%A4%8Dubuntu-linux%E4%B8%AD%E7%9A%84%E8%93%9D%E7%89%99%E8%BF%9E%E6%8E%A5%E9%97%AE%E9%A2%98/2021-05-12/)
+- [Ubuntu Bluetooth connection suspending](https://zhongguo.eskere.club/%E5%A6%82%E4%BD%95%E4%BF%AE%E5%A4%8Dubuntu-linux%E4%B8%AD%E7%9A%84%E8%93%9D%E7%89%99%E8%BF%9E%E6%8E%A5%E9%97%AE%E9%A2%98/2021-05-12/)
+-[Ubuntu wake up after suspending](https://ifttl.com/wakeup-suspended-ubuntu-with-wireless-bluetooth-mouse/)
 
 # Create a new acount  
 TBD  
