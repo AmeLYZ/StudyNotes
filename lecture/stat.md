@@ -99,4 +99,5 @@ Altlernative hypothesis is $ x>\mu $ or $ x<\mu $ .
 If the variance of the disturbances is known, standardized estimated values follow the normal distribution $ {{\widehat{\beta}_i-\beta_i}\over{\sigma_{\beta_i}}}\sim{N(0,1)} $ .  
 If the variance is unknown, $ test={{\widehat{\beta}_i-\beta_i}\over{s_{\widehat{\beta}_i}}}={{{\widehat{\beta}_i-\beta_i}\over{\sigma_{\beta_i}}}\over{{s_{\beta_i}}\over{\sigma_{\beta_i}}}}\sim{t(n-k)} $ (**$ t $-destribution** with $ n-k $ degrees of freedom).  
 
-## F-test  
+## F-
+asddhufhuskljjldfskjfjsddsfaas
