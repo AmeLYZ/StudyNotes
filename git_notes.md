@@ -1,8 +1,8 @@
 # git学习笔记
 > 参考链接
-- [Github简明教程](https://www.runoob.com/w3cnote/git-guide.html)
-- [Github详解](https://blog.csdn.net/Hanani_Jia/article/details/77950594)
-- [Github教程](https://blog.csdn.net/rj597306518/article/details/71307757)
+>- [Github简明教程](https://www.runoob.com/w3cnote/git-guide.html)
+>- [Github详解](https://blog.csdn.net/Hanani_Jia/article/details/77950594)
+>- [Github教程](https://blog.csdn.net/rj597306518/article/details/71307757)
 
 ## 配置
 ### 安装Git

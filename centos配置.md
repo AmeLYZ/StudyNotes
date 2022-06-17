@@ -1,14 +1,14 @@
 # CentOS配置笔记
 > 参考链接:
-- 简书 [CentOS+Flask+Nginx+uWSGI配置](https://www.jianshu.com/p/f1acbd401bed)
-- CSDN [CentOS+Flask+uWSGI+Nginx+supervisor部署](https://blog.csdn.net/yanghuan313/article/details/69214889)
-- CSDN [Flask阿里云上部署](https://blog.csdn.net/andor_zz/article/details/51622358)
-- CSDN [从0部署Flask项目](https://blog.csdn.net/zhyh1435589631/article/details/51946439)
-- [如何部署Flask项目](https://segmentfault.com/q/1010000004169782)
-- [基于Nginx+uWSGI部署Django](https://blog.igevin.info/posts/deploy-django-with-ubuntu-and-uwsgi/)
-- [nginx配置](https://www.cnblogs.com/Erick-L/p/7066455.html)
-- [nginx配置2](https://www.oschina.net/translate/serving-flask-with-nginx-on-ubuntu)
-- [uWSGI与Nginx讲解](https://blog.csdn.net/shu_8708/article/details/79068581)
+>- 简书 [CentOS+Flask+Nginx+uWSGI配置](https://www.jianshu.com/p/f1acbd401bed)
+>- CSDN [CentOS+Flask+uWSGI+Nginx+supervisor部署](https://blog.csdn.net/yanghuan313/article/details/69214889)
+>- CSDN [Flask阿里云上部署](https://blog.csdn.net/andor_zz/article/details/51622358)
+>- CSDN [从0部署Flask项目](https://blog.csdn.net/zhyh1435589631/article/details/51946439)
+>- [如何部署Flask项目](https://segmentfault.com/q/1010000004169782)
+>- [基于Nginx+uWSGI部署Django](https://blog.igevin.info/posts/deploy-django-with-ubuntu-and-uwsgi/)
+>- [nginx配置](https://www.cnblogs.com/Erick-L/p/7066455.html)
+>- [nginx配置2](https://www.oschina.net/translate/serving-flask-with-nginx-on-ubuntu)
+>- [uWSGI与Nginx讲解](https://blog.csdn.net/shu_8708/article/details/79068581)
 
 ## 文件传输
 - 查看开放的端口
