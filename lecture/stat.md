@@ -41,7 +41,7 @@ The assumption is $ f(\epsilon_i)={{1}\over{\sqrt{2\pi\sigma{^2_\epsilon}}}}e^{-
 $$ L(\beta,\sigma{^2_\epsilon}|\epsilon)=\Pi{^n_{i=1}}{{1}\over{\sqrt{2\pi\sigma{^2_\epsilon}}}}e^{-{{1}\over{2\sigma{^2_\epsilon}}}\epsilon{^2_i}}=\Pi{^n_{i=1}}{{1}\over{\sqrt{2\pi\sigma{^2_\epsilon}}}}e^{-{{1}\over{2\sigma{^2_\epsilon}}}(y_i-\Sigma_jx_{ij}\beta_j)^2} $$
 - Log-likelihood:  
 $$ l(\beta,\sigma{^2_\epsilon})=const.-{{n}\over{2}}\log(\sigma{^2_\epsilon})-(y-X\beta)^T(y-X\beta)/(2\sigma{^2_\epsilon}) $$  
-- Fitst order condition for the log-likelihood:  
+- First order condition for the log-likelihood:  
 $$ s(\beta)={{\partial l}\over{\partial\beta}}=-{{1}\over{\sigma{^2_\epsilon}}}(X^Ty-X^TX\beta)=0 $$  
 $$ s(\sigma{^2_\epsilon})=-{{{n}\over{2\sigma{^2_\epsilon}}}}+{{(y-X\beta)^T(y-X\beta)}\over{2\sigma{^4_\epsilon}}}=0 $$
 - ML estimator:  
@@ -74,14 +74,14 @@ $$ \bar{R}^2 = 1-{{n-1}\over{n-(k-1)}}(1-R^2)$$
 ### Other Measures  
 - AIC(Akaike Information Criterion)  
 $$ AIC=2k-2\ln(\hat{L})$$  
-   - $ \hat{L} $: the maximized likelihoos function
+   - $ \hat{L} $: the maximized likelihood function
 - BIC(Bayesian Information Criterion)  
 $$ BIC=k\ln(n)-2\ln(\hat{L})$$
 
 # 2. Hypothesis Testing
 ## Null Hypothesis  
 An unknown parameter takes a certain value.  
-Ususlly we want to reject null hypothesis.  
+Usually we want to reject null hypothesis.  
 
 ## Alternative Hypothesis  
 A hypothesis which holds if the null hypothesis is rejected.  
@@ -91,12 +91,12 @@ A hypothesis which holds if the null hypothesis is rejected.
 If the estimated value $ x $ is below or above the critical values, the null hypothesis that the parameter $ x $ takes a certain value $ \mu $ is rejected. The alternative hypothesis is $ x\neq\mu $ .  
 
 ### One-Tailed Test  
-Altlernative hypothesis is $ x>\mu $ or $ x<\mu $ .  
+Alternative hypothesis is $ x>\mu $ or $ x<\mu $ .  
 
-### Sighnificanve Level: $\alpha$  
+### Significance Level: $\alpha$    
 
 ## $t$-test  
 If the variance of the disturbances is known, standardized estimated values follow the normal distribution $ {{\widehat{\beta}_i-\beta_i}\over{\sigma_{\beta_i}}}\sim{N(0,1)} $ .  
-If the variance is unknown, $ test={{\widehat{\beta}_i-\beta_i}\over{s_{\widehat{\beta}_i}}}={{{\widehat{\beta}_i-\beta_i}\over{\sigma_{\beta_i}}}\over{{s_{\beta_i}}\over{\sigma_{\beta_i}}}}\sim{t(n-k)} $ (**$ t $-destribution** with $ n-k $ degrees of freedom).  
+If the variance is unknown, $ test={{\widehat{\beta}_i-\beta_i}\over{s_{\widehat{\beta}_i}}}={{{\widehat{\beta}_i-\beta_i}\over{\sigma_{\beta_i}}}\over{{s_{\beta_i}}\over{\sigma_{\beta_i}}}}\sim{t(n-k)} $ (**$ t $-distribution** with $ n-k $ degrees of freedom).  
 
 ## F-test  
