@@ -6,7 +6,7 @@ def compute_numerial_gradient(cost_func, theta):
     perturb = np.zeros(theta.size)
 
     e = 1e-4
-
+ 
     for p in range(theta.size):
         perturb[p] = e
         loss1, grad1 = cost_func(theta - perturb)

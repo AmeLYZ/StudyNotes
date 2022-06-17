@@ -10,7 +10,7 @@ import checkNNGradients as cng
 import predict as pd
 
 plt.ion()
-
+ 
 # Setup the parameters you will use for this part of the exercise
 input_layer_size = 400  # 20x20 input images of Digits
 hidden_layer_size = 25  # 25 hidden layers

@@ -3,7 +3,9 @@
         "Exogeneity",
         "Texlive",
         "Unbiasedness",
-        "arange"
+        "arange",
+        "numerial",
+        "numgrad"
     ],
     "cSpell.words": [
         "Akaike",

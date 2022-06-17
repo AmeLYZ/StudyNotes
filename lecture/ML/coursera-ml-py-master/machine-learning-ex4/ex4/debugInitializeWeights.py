@@ -7,3 +7,4 @@ def debug_initialize_weights(fan_out, fan_in):
     w = np.sin(np.arange(w.size)).reshape(w.shape) / 10
 
     return w
+ 
