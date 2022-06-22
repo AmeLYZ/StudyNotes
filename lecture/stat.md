@@ -34,7 +34,7 @@ Multicollinearity occurs when an explanatory variable is predictable with anothe
 - Missing data  
 - Outlier  
 
-## Maximum Likelihood Method  
+## Maximum Likelihood Estimation    
 It's alternative to least squares.  
 The assumption is $ f(\epsilon_i)={{1}\over{\sqrt{2\pi\sigma{^2_\epsilon}}}}e^{-{{1}\over{2\sigma{^2_\epsilon}}}\epsilon{^2_i}} $, in which $ \epsilon_i $ is the error term in the linear classical regression model.  
 - Likelihood function:  
