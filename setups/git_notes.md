@@ -6,15 +6,22 @@
 
 ## 配置
 ### 安装Git
-下载[Git for windows](http://msysgit.github.io/)
+- Windows  
+下载[Git for windows](http://msysgit.github.io/)  
+- Linux (Ubuntu)  
+```bash
+sudo apt install git
+```
 
 ### 配置本地ssh
+- Step 1 (if Ubuntu, skip to step 2)  
 ```Bash
 ssh-keygen -t rsa -C "<your email address>"
-```
+```  
 将生成的`id_rsa.pub`内容复制到  
 GitHub->Settings->SSH and GPG keys->New SSH key  
-中 然后在git Bash 里设置账号
+中 然后在git Bash 里设置账号  
+- Step 2
 ```Bash
 ssh -T git@github.com
 git config --global user.name "<your name>"

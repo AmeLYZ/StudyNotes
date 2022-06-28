@@ -14,6 +14,13 @@ Set-ExecutionPolicy RemoteSigned
 conda init powershell
 conda config --set auto_activate_base False  %取消自动启动 conda 环境%
 ```  
+# Install VSCode
+## Shortcut 
+change the `when` value of `jupyter.execSelectionInteractive`.  
+```text
+editorTextFocus && !findInputFocussed && !jupyter.ownsSelection && !notebookEditorFocused && !replaceInputFocussed && editorLangId == 'python'
+
+```
 
 # 命令行中使用 conda 与 pip 命令  
 ## 代理问题 HTTP ERROR
