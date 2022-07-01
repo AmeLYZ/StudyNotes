@@ -1,6 +1,11 @@
 # 安装 anaconda  
 建议安装选项不要选 "for all users"， 而是选择 "just for me"。  
 Linux 在非 root 下安装，将在用户目录下自动创建 `anaconda3` 目录。
+# 虚拟环境
+需要安装 jupyter 才能正常使用交互式窗口。
+```bash
+conda install jupyter
+```
 
 # PowerShell 自动启动 conda 环境  
 > 参考链接:
@@ -36,5 +41,6 @@ HTTPS_PROXY = http://127.0.0.1:7890
 conda deactivate  
 conda activate
 conda list
-
+conda create --name <my env> python=3.8
+conda install <package=version>
 ```
