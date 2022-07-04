@@ -4,12 +4,13 @@
 >- [Ubuntu Bluetooth connection suspending](https://zhongguo.eskere.club/%E5%A6%82%E4%BD%95%E4%BF%AE%E5%A4%8Dubuntu-linux%E4%B8%AD%E7%9A%84%E8%93%9D%E7%89%99%E8%BF%9E%E6%8E%A5%E9%97%AE%E9%A2%98/2021-05-12/)
 >- [Ubuntu wake up after suspending](https://ifttl.com/wakeup-suspended-ubuntu-with-wireless-bluetooth-mouse/)
 >- [Ubuntu bluetooth lost connection](https://blog.csdn.net/yanglei0385/article/details/81840072)
+>- [Install Ubuntu on WSL2 on Windows 11 with GUI support](https://ubuntu.com/tutorials/install-ubuntu-on-wsl2-on-windows-11-with-gui-support#1-overview)
 
 
-# Create a new acount  
+# 1. Create a new acount  
 TBD  
 
-# The root mode
+# 2. The root mode
 For the first time you entering the system, the root password is randomly generated. You need to setup for the root password by the following command.  
 ```bash
 sudo passwd  # Set the password
@@ -17,13 +18,13 @@ su root  # Run root mode
 exit  # Exit root mode
 ```  
 
-# Change the username  
+# 3. Change the username  
 ```bash
 vi /etc/hostname  
 vi /etc/hosts
 ```
 
-# Change the Keyboard Format  
+# 4. Change the Keyboard Format  
 ```bash
 sudo dpkg-reconfigure keyboard-configuration
 ```
@@ -117,7 +118,7 @@ apt remove <pkg>
 apt update <pkg>
 apt list
 ```
-# Setup remote awake  
+# 5. Setup remote awake  
 ## Check the state of `wake on lan`  
 ```bash
 # get the logical name of network interface  
@@ -129,11 +130,11 @@ sudo ethtool <name of network interface> |grep Wake-on
 # g: permitted  d: denied
 ```
 
-# Setup working environment    
+# 6. Setup working environment    
 - Anaconda  
 - VSCode 
 
-# Shortcut  
+# 7. Shortcut  
 - Super  
 Open the search menu.  
 - Super + L  
@@ -145,7 +146,7 @@ Show the desktop.
 - Ctrl + Alt + ↑↓  
 Change the workspace  
 
-# Bash command & shortcut  
+# 8. Bash command & shortcut  
 - Command  
 ```bash
 # system
@@ -183,3 +184,6 @@ ctrl + x  # exit
 
 - Shortcut  
    1. Ctrl + Shift + c/v  
+
+   # 0. P.S. Install ubuntu under win11  
+   Follow the instruction of [Ubuntu on WSL2 on Windows 11](https://ubuntu.com/tutorials/install-ubuntu-on-wsl2-on-windows-11-with-gui-support#1-overview)
