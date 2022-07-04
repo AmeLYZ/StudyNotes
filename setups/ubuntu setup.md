@@ -47,6 +47,10 @@ traceroute <url>
 # check public ip
 curl ifconfig.me  
 curl cip.cc  
+
+# open ssh and check the port  
+sudo service ssh start
+sudo netstat -nlap|grep sshd|grep tcp|grep LISTEN
 ```
 
 ## Curl  
@@ -112,6 +116,17 @@ apt install <pkg>
 apt remove <pkg>
 apt update <pkg>
 apt list
+```
+# Setup remote awake  
+## Check the state of `wake on lan`  
+```bash
+# get the logical name of network interface  
+ifconfig
+sudo lshw -class network
+
+# check the state of `wake on lan`
+sudo ethtool <name of network interface> |grep Wake-on
+# g: permitted  d: denied
 ```
 
 # Setup working environment    
