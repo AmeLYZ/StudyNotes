@@ -55,6 +55,7 @@ sudo netstat -nlap|grep sshd|grep tcp|grep LISTEN
 ```
 
 ## Curl  
+It is a command line tool for downloading or shipping data through the internet.
 - Install  
 ```bash
 sudo apt install curl
@@ -132,6 +133,11 @@ sudo ethtool <name of network interface> |grep Wake-on
 
 # 6. Setup working environment    
 - Anaconda  
+Download the `.sh` file through by `curl <url>`, and then run the following command.  
+```bash
+sha256sum <.sh file name>
+bash <.sh file name>
+```
 - VSCode 
 
 # 7. Shortcut  
@@ -158,7 +164,9 @@ lsusb  # show usb devices
 
 pwd  # show working directory
 mkdir <dir name>  # make new directory
+rmdir <dir name>  # remove a directory
 touch <file name>  # make new file 
+rm <file name>  # remove a file
 cp <src> <dst>  # copy scr to dst
 mv <src> <dst>  # move or rename file from src to dst
 
