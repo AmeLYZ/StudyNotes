@@ -5,7 +5,10 @@
 >- [Ubuntu wake up after suspending](https://ifttl.com/wakeup-suspended-ubuntu-with-wireless-bluetooth-mouse/)
 >- [Ubuntu bluetooth lost connection](https://blog.csdn.net/yanglei0385/article/details/81840072)
 >- [Install Ubuntu on WSL2 on Windows 11 with GUI support](https://ubuntu.com/tutorials/install-ubuntu-on-wsl2-on-windows-11-with-gui-support#1-overview)
-
+>- [Install MySQL on WSL](https://kontext.tech/article/615/install-mysql-on-wsl)
+>- [How to install MySQL on WSL2](https://pen-y-fan.github.io/2021/08/08/How-to-install-MySQL-on-WSL-2-Ubuntu/)
+>- [MySQL won't start - error: su...](https://stackoverflow.com/questions/62987154/mysql-wont-start-error-su-warning-cannot-change-directory-to-nonexistent)
+>- [MySQL Failed! Error: SET PASSWORD...](https://exerror.com/failed-error-set-password-has-no-significance-for-user-rootlocalhost-as-the-authentication-method-used-doesnt-store-authentication-data-in-the-mysql-server/)
 
 # 1. Create a new acount  
 TBD  
@@ -132,13 +135,42 @@ sudo ethtool <name of network interface> |grep Wake-on
 ```
 
 # 6. Setup working environment    
-- Anaconda  
+## Anaconda  
 Download the `.sh` file through by `curl <url>`, and then run the following command.  
 ```bash
 sha256sum <.sh file name>
 bash <.sh file name>
 ```
-- VSCode 
+
+## VSCode 
+
+## MySQL  
+1. installation  
+   ```bash
+   sudo apt install mysql-server mysql-client  
+   
+   # check the version 
+   mysql --version  
+
+   # service status 
+   sudo service mysql status  # check the status
+   sudo service mysql start  # start mysql
+   sudo service mysql stop  # stop mysql  
+   sudo service mysql restart  # restart mysql
+
+   # get into the client  
+   sudo mysql -u root -p
+   ```  
+   If you meet the problem `su: warning: cannot change directory to /nonexistent: No such file or directory`, try the following commands.  
+   ```bash
+   sudo service mysql stop
+   sudo usermod -d /var/lib/mysql/ mysql
+   sudo service mysql start
+   ```
+2. query
+   ```bash
+   
+   ```
 
 # 7. Shortcut  
 - Super  
@@ -170,6 +202,8 @@ rm <file name>  # remove a file
 cp <src> <dst>  # copy scr to dst
 mv <src> <dst>  # move or rename file from src to dst
 
+# unzip file
+tar -xvzf <file name> -C <target folder>
 
 # vi
 vi <file name>  # open or create file
@@ -193,5 +227,21 @@ ctrl + x  # exit
 - Shortcut  
    1. Ctrl + Shift + c/v  
 
-   # 0. P.S. Install ubuntu under win11  
-   Follow the instruction of [Ubuntu on WSL2 on Windows 11](https://ubuntu.com/tutorials/install-ubuntu-on-wsl2-on-windows-11-with-gui-support#1-overview)
+# 0. P.S. Install ubuntu under win11  
+Follow the instruction of [Ubuntu on WSL2 on Windows 11](https://ubuntu.com/tutorials/install-ubuntu-on-wsl2-on-windows-11-with-gui-support#1-overview)  
+
+## command  
+```bash
+# 1
+wsl -d <your system name>
+wsl -d Ubuntu  
+# 2
+bash  
+```
+## remote connection  
+1. Since the `openssh-server` cannot work properly, we need to reinstall this package.  
+   ```bash
+   sudo apt remove openssh-server
+   sudo apt install openssh-server
+   ```
+2.
