@@ -73,8 +73,9 @@ All Constrains may used are listed below.
 AUTO_INCREMENT
 NOT NULL
 UNIQUE
-DEFAULT 'value'
-
+PRIMARY KEY
+DEFAULT
+CHECK
 ```
 
 ```sql
@@ -93,6 +94,11 @@ CREATE TABLE `student`(
 ALTER TABLE `student` ADD `gpa` DECIMAL(3, 2);
 ALTER TABLE `student` DROP `gpa`;
 ALTER TABLE `student` MODIFY 'student_id' INT AUTO_INCREMENT;
+
+ALTER TABLE `student`
+ADD FOREIGN KEY(`teacher_id`) 
+REFERENCES `teacher`(`teacher_id`)
+ON DELETE SET NULL;
 ```
 
 ## Operate Data
@@ -124,5 +130,13 @@ WHERE `student_id` = 3;
 
 ```sql
 SELECT * FROM `student`;
-SELECT `name`, `major` FROM `student` ORDER BY `gpa
+
+SELECT `name`, `major` 
+FROM `student` 
+WHERE `major` = 'English' OR `score` <> 70  -- <> means not equal
+ORDER BY `gpa` ASC  -- ASC:ascend DESC: descend
+LIMIT 5;
+
+SELECT * FROM `student`
+WHERE `major` IN('English', 'History'); 
 ```
