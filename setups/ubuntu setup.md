@@ -51,6 +51,7 @@ traceroute <url>
 # check public ip
 curl ifconfig.me  
 curl cip.cc  
+curl ipinfo.io
 
 # open ssh and check the port  
 sudo service ssh start
@@ -66,6 +67,7 @@ sudo apt install curl
 - Command  
 ```bash
 curl <options> <URL>
+curl ipinfo.io  # get the ip address of Wide Area Network
 ```
 ## SSH tool  
 - Install  
@@ -135,11 +137,12 @@ sudo ethtool <name of network interface> |grep Wake-on
 ```
 
 # 6. Setup working environment    
-## Anaconda  
+## Anaconda 
 Download the `.sh` file through by `curl <url>`, and then run the following command.  
 ```bash
 sha256sum <.sh file name>
 bash <.sh file name>
+print("hello")
 ```
 
 ## VSCode 
@@ -169,23 +172,23 @@ bash <.sh file name>
    ```
 2. query
    ```bash
-   
+   SELECT
    ```
 
 # 7. Shortcut  
 - Super  
 Open the search menu.  
 - Super + L  
-Lock  
+Lock.  
 - Ctrl + Alt + T  
 Open the terminal.    
 - Super + D  
 Show the desktop.  
 - Ctrl + Alt + ↑↓  
-Change the workspace  
+Change the workspace.  
 
 # 8. Bash command & shortcut  
-- Command  
+## Command  
 ```bash
 # system
 uname -srm  # show kernal name + release version + hardware framework name
@@ -193,6 +196,8 @@ dpkg --get-selections | grep linux  # show all kernals
 
 lshw  # show hardware
 lsusb  # show usb devices
+
+cat /etc/shadow  # show all users
 
 pwd  # show working directory
 mkdir <dir name>  # make new directory
@@ -222,10 +227,15 @@ Esc  # command mode
 # nano
 nano <file name>  # open or create file
 ctrl + x  # exit
+
+# ssh
+ssh <name>@<hostname> -p <port>
 ```  
 
-- Shortcut  
-   1. Ctrl + Shift + c/v  
+## Shortcut  
+1. copy & paste
+   Ctrl + Shift + c/v  
+2. 
 
 # 0. P.S. Install ubuntu under win11  
 Follow the instruction of [Ubuntu on WSL2 on Windows 11](https://ubuntu.com/tutorials/install-ubuntu-on-wsl2-on-windows-11-with-gui-support#1-overview)  
@@ -244,4 +254,12 @@ bash
    sudo apt remove openssh-server
    sudo apt install openssh-server
    ```
-2.
+2. Write `/etc/ssh/sshd_config`.
+   ```bash
+   sudo nano /etc/ssh/sshd_config  
+
+   Port 2222
+   PermitRootLogin yes
+   PasswordAuthentication yes
+   ```
+
