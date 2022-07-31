@@ -14,6 +14,9 @@
 
 ## Create and Delete a Database  
 
+Backticks(\`\`) are used to identify whether the string is a reserved keyword or a normal string.  
+Single quotes(\'\') are used for value of strings in the database.  
+
 ```sql
 -- create
 CREATE DATABASE name;
@@ -44,7 +47,7 @@ TIMESTAMP  -- 'YYYY-MM-DD HH:MM:SS'
 ### Create & Delete
 
 ```sql
-USE `name`;
+USE `name`;  -- choose a db
 
 -- create table
 -- way 1
@@ -67,7 +70,7 @@ DROP TABLE `student`;
 
 ### Create with Constrains
 
-All Constrains may used are listed below.
+Most frequently used Constrains are listed below.
 
 ```sql
 AUTO_INCREMENT
@@ -137,6 +140,37 @@ WHERE `major` = 'English' OR `score` <> 70  -- <> means not equal
 ORDER BY `gpa` ASC  -- ASC:ascend DESC: descend
 LIMIT 5;
 
-SELECT * FROM `student`
+SELECT DISTINCT `name` FROM `student`
 WHERE `major` IN('English', 'History'); 
+```
+
+### Aggregate Functions
+
+```sql
+-- COUNT
+SELECT COUNT(*) FROM `student`;
+
+-- AVG
+SELECT AVG(`gpa`) FROM `student`;
+
+-- SUM
+SELECT SUM(`gpa`) FROM `student`;
+
+-- MAX & MIN
+SELECT MAX(`gpa`) FROM `student`;
+```
+
+### Wildcard
+
+We use wildcard to substitute one or more characters.
+Wildcards are often used with `LIKE`. 
+```sql
+-- %
+SELECT * 
+FROM `client`
+WHERE `phone` LIKE `%3456%`
+-- _
+SELECT * 
+FROM `client`
+WHERE `birth_data` LIKE `202001__`
 ```
