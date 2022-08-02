@@ -163,7 +163,8 @@ SELECT MAX(`gpa`) FROM `student`;
 ### Wildcard
 
 We use wildcard to substitute one or more characters.
-Wildcards are often used with `LIKE`. 
+Wildcards are often used with `LIKE`.  
+
 ```sql
 -- %
 SELECT * 
