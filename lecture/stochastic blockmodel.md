@@ -5,8 +5,7 @@
 - Likelihood function:  
 $$ P(G|p,g)=\prod_{i<j}p_{g_i,g_j}^{A_{ij}}(1-p_{g_i,g_j})^{1-A_{ij}} $$  
 $ A_{ij} $: Adjacency matrix of graph $G$.  
-$ p_{rs} $: the probability of an existing edge from vertices in group $r$ to 
-vertices in group $s$.  
+$ p_{rs} $: the probability of an existing edge from vertices in group $r$ to vertices in group $s$.  
 $ g_i $: The group which vertex $i$ belongs to.  
 
 ## Poisson (with multiple edges and self-loops)  
