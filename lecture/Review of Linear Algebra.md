@@ -55,7 +55,7 @@ $$ \vec{v}=\begin{bmatrix} -1 \\ 2 \\ \end{bmatrix} $$
 
   In this way, we can define a linear transformation by **matrix multiplication** giving a $2\times2$ **matrix**.
 - **Matrix** is a set of vectors deciding where the vector is after the linear transformation.
-- In more general cases, if we have a matrix $ \begin{bmatrix} a&b \\ c&d \\ \end{bmatrix}$ and a vector $ \begin{bmatrix} x \\ y \\ \end{bmatrix}$, then the **matrix multiplication** can be written by:
+- In more general cases, if we have a matrix $\begin{bmatrix} a&b \\ c&d \\ \end{bmatrix}$ and a vector $\begin{bmatrix} x \\ y \\ \end{bmatrix}$, then the **matrix multiplication** can be written by:
 
 $$
 \begin{bmatrix} a&b \\ c&d \\ \end{bmatrix}\begin{bmatrix} x \\ y \\ \end{bmatrix}=
