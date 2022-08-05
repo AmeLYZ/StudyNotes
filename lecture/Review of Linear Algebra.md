@@ -5,6 +5,7 @@ This is a simple review of linear algebra.
 ## 1. Vector
 
 There are different points of view explaining the vector.  
+
 $$ \vec{v}=\begin{bmatrix} -1 \\ 2 \\ \end{bmatrix} $$
 
 - Computer Science
@@ -84,7 +85,7 @@ $$
 \hat{\boldsymbol{j}} \longrightarrow
 \begin{bmatrix} a&b \\ c&d \\ \end{bmatrix}\begin{bmatrix} f \\ h \\ \end{bmatrix}=
 \begin{bmatrix} af+bh \\ cf+dh \\ \end{bmatrix}
-$$
+$$ 
 One we get the basis vectors, we can do the combination of linear transformations through **matrix multiplication**:
 $$
 \underbrace{\begin{bmatrix} a&b \\ c&d \\ \end{bmatrix}}_{M_2}\underbrace{\begin{bmatrix} e&f \\ g&h \\ \end{bmatrix}}_{M_1}=
