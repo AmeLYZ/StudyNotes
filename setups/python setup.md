@@ -15,8 +15,11 @@ conda create -n <env name> python=3.9 jupyter
 
 # remove env
 conda remove -n <env name> --all
+
 # install package
 conda install jupyter
+conda install ipython
+conda install --channel conda-forge geopandas
 ```
 
 ## PowerShell 自动启动 conda 环境  
