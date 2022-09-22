@@ -1,3 +1,5 @@
+# Ubuntu Setup
+
 > Ref
 >
 >- [Ubuntu的Linux内核安装与切换](https://zhaoxuhui.top/blog/2021/02/20/ubuntu-linux-kernel-installation.html)
@@ -11,11 +13,11 @@
 >- [MySQL won't start - error: su...](https://stackoverflow.com/questions/62987154/mysql-wont-start-error-su-warning-cannot-change-directory-to-nonexistent)
 >- [MySQL Failed! Error: SET PASSWORD...](https://exerror.com/failed-error-set-password-has-no-significance-for-user-rootlocalhost-as-the-authentication-method-used-doesnt-store-authentication-data-in-the-mysql-server/)
 
-# 1. Create a new acount  
+## 1. Create a new acount  
 
 TBD  
 
-# 2. The root mode
+## 2. The root mode
 
 For the first time you entering the system, the root password is randomly generated. You need to setup for the root password by the following command.  
 
@@ -25,22 +27,22 @@ su root  # Run root mode
 exit  # Exit root mode
 ```  
 
-# 3. Change the username  
+## 3. Change the username  
 
 ```bash
 vi /etc/hostname  
 vi /etc/hosts
 ```
 
-# 4. Change the Keyboard Format  
+## 4. Change the Keyboard Format  
 
 ```bash
 sudo dpkg-reconfigure keyboard-configuration
 ```
 
-# Install tools & packages  
+## Install tools & packages  
 
-## Network tool  
+### Network tool  
 
 - Install
 
@@ -69,7 +71,7 @@ sudo service ssh start
 sudo netstat -nlap|grep sshd|grep tcp|grep LISTEN
 ```
 
-## Curl  
+### Curl  
 
 It is a command line tool for downloading or shipping data through the internet.
 
@@ -86,7 +88,7 @@ curl <options> <URL>
 curl ipinfo.io  # get the ip address of Wide Area Network
 ```
 
-## SSH tool  
+### SSH tool  
 
 - Install  
 
@@ -94,7 +96,7 @@ curl ipinfo.io  # get the ip address of Wide Area Network
 sudo apt install ssh
 ```
 
-## Device manager  
+### Device manager  
 
 - Install  
 
@@ -112,7 +114,7 @@ sudo apt instal hwinfo
    2. GUI  
    Search software "hardinfo"
 
-## Ubuntu Kernel  Upgrade Utility (ukuu)  
+### Ubuntu Kernel  Upgrade Utility (ukuu)  
 
 Ukuu is a tool to install and upgrade Linux kernel.  
 
@@ -131,7 +133,7 @@ sudo ukuu-gek  # desktop GUI
 sudo ukuu  # server CLI
 ```
 
-## Different between `apt` / `apt-get` / `yum`  
+### Different between `apt` / `apt-get` / `yum`  
 
 `yum` is for RedHat packages `rpm`.  
 
@@ -158,9 +160,9 @@ apt update <pkg>
 apt list
 ```
 
-# 5. Setup remote awake  
+## 5. Setup remote awake  
 
-## Check the state of `wake on lan`  
+### Check the state of `wake on lan`  
 
 ```bash
 # get the logical name of network interface  
@@ -172,9 +174,9 @@ sudo ethtool <name of network interface> |grep Wake-on
 # g: permitted  d: denied
 ```
 
-# 6. Setup working environment
+## 6. Setup working environment
 
-## Anaconda
+### Anaconda
 
 Download the `.sh` file through by `curl <url>`, and then run the following command.  
 
@@ -184,9 +186,9 @@ bash <.sh file name>
 print("hello")
 ```
 
-## VSCode
+### VSCode
 
-## MySQL  
+### MySQL  
 
 1. installation  
 
@@ -220,7 +222,7 @@ print("hello")
    SELECT
    ```
 
-# 7. Shortcut  
+## 7. Shortcut  
 
 - Super  
 Open the search menu.  
@@ -233,9 +235,9 @@ Show the desktop.
 - Ctrl + Alt + ↑↓  
 Change the workspace.  
 
-# 8. Bash command & shortcut  
+## 8. Bash command & shortcut  
 
-## Command  
+### Command  
 
 ```bash
 # system
@@ -282,18 +284,18 @@ ctrl + x  # exit
 ssh <name>@<hostname> -p <port>
 ```  
 
-## Shortcut  
+### Shortcut  
 
 1. copy & paste
    Ctrl + Shift + c/v  
 
 2.
 
-# 0. P.S. Install ubuntu under win11  
+## 0. P.S. Install ubuntu under win11  
 
 Follow the instruction of [Ubuntu on WSL2 on Windows 11](https://ubuntu.com/tutorials/install-ubuntu-on-wsl2-on-windows-11-with-gui-support#1-overview)  
 
-## command  
+### command  
 
 ```bash
 # 1
@@ -303,7 +305,7 @@ wsl -d Ubuntu
 bash  
 ```
 
-## remote connection  
+### remote connection  
 
 1. Since the `openssh-server` cannot work properly, we need to reinstall this package.  
 
