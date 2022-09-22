@@ -3,6 +3,7 @@
 > 参考链接
 >
 >- [Github简明教程](https://www.runoob.com/w3cnote/git-guide.html)
+>- [图解 Git](https://www.runoob.com/w3cnote/git-graphical.html)
 >- [Github详解](https://blog.csdn.net/Hanani_Jia/article/details/77950594)
 >- [Github教程](https://blog.csdn.net/rj597306518/article/details/71307757)
 >- [Connecting to Github with SSH](https://docs.github.com/en/authentication/connecting-to-github-with-ssh)
@@ -63,7 +64,7 @@ Before doing this, make sure you have set `user.name` and `user.email` in git se
 
 - remote empty repository & local empty folder
     1. Create a remote empty repository by pressing [new button](https://github.com/new).  
-    2. Start with `git init` by creating a local folder (you'd better build a fold with the same name as the remote repository).  
+    2. Start with `git init` by creating a local folder (you'd better build a folder with the same name as the remote repository).  
 
         ```Bash
         mkdir name_of_the_repository && cd name_of_the_repository
@@ -97,7 +98,7 @@ Before doing this, make sure you have set `user.name` and `user.email` in git se
 
 - remote non-empty repoitory & local empty folder
     1. Create a remote repository with `README.md` or `.ignore`. Or simply you can start with an existing repository.  
-    2. Start with `git init` by creating a local folder(you'd better build a fold with the same name as the remote repository).  
+    2. Start with `git init` by creating a local folder(you'd better build a folder with the same name as the remote repository).  
 
         ```Bash
         mkdir name_of_the_repository && cd name_of_the_repository
@@ -128,7 +129,7 @@ Before doing this, make sure you have set `user.name` and `user.email` in git se
 
 - remote non-empty repository & local non-empty folder
     1. Create a remote repository with `README.md` or `.ignore`. Or simply you can start with an existing repository.  
-    2. Start with `git init` by creating a local folder(you'd better build a fold with the same name as the remote repository).  
+    2. Start with `git init` by creating a local folder(you'd better build a folder with the same name as the remote repository).  
 
         ```Bash
         mkdir name_of_the_repository && cd name_of_the_repository
