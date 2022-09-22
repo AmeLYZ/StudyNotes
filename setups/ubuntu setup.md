@@ -248,15 +248,17 @@ lsusb  # show usb devices
 cat /etc/shadow  # show all users
 
 pwd  # show working directory
-mkdir <dir name>  # make new directory
-rmdir <dir name>  # remove a directory
-touch <file name>  # make new file 
-rm <file name>  # remove a file
-cp <src> <dst>  # copy scr to dst
-mv <src> <dst>  # move or rename file from src to dst
+mkdir dir_name  # make new folder
+rmdir dir_name  # remove a folder
+echo "content" >> file_name  # write content to a file
+touch file_name  # make new file 
+rm file_name  # remove a file
+rm -r dir_name  # remove a folder
+cp src dst  # copy scr to dst
+mv src dst  # move or rename file from src to dst
 
 # unzip file
-tar -xvzf <file name> -C <target folder>
+tar -xvzf file_name -C target_folder
 
 # vi
 vi <file name>  # open or create file
