@@ -105,9 +105,9 @@ sudo apt instal hwinfo
 - Launch  
    1. Terminal  
 
-   ```bash
-   hwinfo --short
-   ```
+      ```bash
+      hwinfo --short
+      ```
 
    2. GUI  
    Search software "hardinfo"
