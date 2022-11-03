@@ -5,21 +5,47 @@
 建议安装选项不要选 "for all users"， 而是选择 "just for me"。  
 Linux 在非 root 下安装，将在用户目录下自动创建 `anaconda3` 目录。
 
-## 虚拟环境
+## env & channel
 
-需要安装 jupyter 才能正常使用交互式窗口。
+The interactive window for a new environment can only launched after installation of `jupyter` and `ipython`.  
+The configuration file `.condarc` is in the root directory of every environment.  
 
 ```bash
 # create env with package
-conda create -n <env name> python=3.9 jupyter
+conda create -n <myenv> python=3.9 jupyter
 
 # remove env
-conda remove -n <env name> --all
+conda remove -n <myenv> --all
 
-# install package
-conda install jupyter
-conda install ipython
-conda install --channel conda-forge geopandas
+# install packages
+conda install jupyter ipython  # multiple packages can be installed at one time
+```
+
+Different channels (source of packages) can be chosen or set when installing a package.  
+
+```bash
+# install packages from conda-forge other than default
+conda install -c conda-forge geopandas
+conda install --channel conda-forge geopandas 
+# install packages from conda-forge, but dependencies may be installed from default
+conda install conda-forge::geopandas
+```
+
+The channel can be changed permanently using `conda config`. Once this command is used, the `.condarc` file will be created.
+
+```bash
+
+# with parameter --env, the configuration becomes locally in current environment.
+conda config --env --add channels conda-forge  # add conda-forge to the top of channel list
+conda config --env --append channels conda-forge  # add conda-forge to the bottom of the list
+conda config --env --remove channels conda-forge
+```
+
+Also different dependency rules can be set, the default setting is `flexible`.  
+
+```bash
+conda config --describe channel_priority
+conda config --env --set channel_priority <strict/flexible/disabled>
 ```
 
 ## PowerShell 自动启动 conda 环境  
@@ -69,8 +95,9 @@ HTTPS_PROXY = http://127.0.0.1:7890
 
 ```bash
 conda deactivate  
-conda activate
+conda activate <myenv>
 conda list
-conda create --name <my env> python=3.8
+conda create --name <myenv> python=3.8
 conda install <package=version>
+conda info --env
 ```
