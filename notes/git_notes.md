@@ -1,4 +1,4 @@
-# git学习笔记
+# git notes
 
 > 参考链接
 >
@@ -9,25 +9,25 @@
 >- [Connecting to Github with SSH](https://docs.github.com/en/authentication/connecting-to-github-with-ssh)
 >- [A collection of useful .gitingore](https://github.com/github/gitignore)
 
-## 1 配置
+## 1 Setting up environment
 
-### 1.1 安装Git
+### 1.1 Installation
 
 - Windows  
-下载[Git for windows](http://msysgit.github.io/)  
+    Download and install from [Git for Windows Setup](https://git-scm.com/download/win).  
 - Linux (Ubuntu)  
 
-```bash
-sudo apt install git
-```
+    ```bash
+    sudo apt install git
+    ```
 
-### 1.2 配置本地ssh
+### 1.2 SSH conection to your account (Github)
 
 1. Generating a new local SSH key
 
     ```Bash
-    ssh-keygen -t ed25519 -C your_email_address 
-    ssh-keygen -t rsa -b 4096 -C your_email_address # use this instead if your system doesn't support ed25519
+    ssh-keygen -t ed25519 -C <your email address> 
+    ssh-keygen -t rsa -b 4096 -C <your email address> # use this instead if your system doesn't support ed25519
     ```  
 
 2. Adding your SSH key to your account. The public key is usually stored in the folder `.ssh/`. Cpoy the content of `id_rsa.pub` to *GitHub -->> Settings -->> SSH and GPG keys -->> New SSH key*. Verify the connection by the following command.  
@@ -37,14 +37,15 @@ sudo apt install git
     > Hi username! You've successfully authenticated...
     ```
 
-3. Step 2
+3. Set global user information
 
-```Bash
-git config --global user.name your_name
-git config --global user.email your_email_address
-```
+    ```Bash
+    # The name and email address here don't have to be the same with github username, it's just for identification
+    git config --global user.name <your name>  
+    git config --global user.email <your email address>
+    ```
 
-### 1.3 设置代理
+### 1.3 Set agent
 
 走代理可以显著提升下载速度
 
@@ -56,9 +57,9 @@ git config --global http.https://github.com.proxy socks5://127.0.0.1:<proxy port
 git config --global --unset http.https://github.com.proxy
 ```
 
-## 2 常用命令
+## 2 Workflow
 
-### 2.1 Start a repository with different situations
+### 2.1 Start a repository
 
 Before doing this, make sure you have set `user.name` and `user.email` in git setting (see 1.2 step2).
 
@@ -67,7 +68,7 @@ Before doing this, make sure you have set `user.name` and `user.email` in git se
     2. Start with `git init` by creating a local folder (you'd better build a folder with the same name as the remote repository).  
 
         ```Bash
-        mkdir name_of_the_repository && cd name_of_the_repository
+        mkdir <repository name> && cd <repository name>
         echo "# SomeRepo" >> README.md
         git init 
         git add README.md  
@@ -76,15 +77,15 @@ Before doing this, make sure you have set `user.name` and `user.email` in git se
         git commit -m "first commit"
         git branch -M main  # -M: force move to branch main
 
-        git remote add origin url_of_the_repository  # you can choose either HTTPS or SSH here
+        git remote add origin <repository url>  # you can choose either HTTPS or SSH here
         git push -u origin main
         ```
 
         Or you can start with `git clone` but not `git init`.
 
         ```bash
-        git clone url_of_the_repository
-        cd name_of_the_repository
+        git clone <repository url>
+        cd <repository name>
 
         echo "# SomeRepo" >> README.md
         git add README.md
@@ -101,9 +102,9 @@ Before doing this, make sure you have set `user.name` and `user.email` in git se
     2. Start with `git init` by creating a local folder(you'd better build a folder with the same name as the remote repository).  
 
         ```Bash
-        mkdir name_of_the_repository && cd name_of_the_repository
+        mkdir <repository name> && cd <repository name>
         git init
-        git remote add origin url_of_the_repository  # you can choose HTTPS/SSH here 
+        git remote add origin <repository url>  # you can choose either HTTPS/SSH here 
 
         # only after pulling the remote branch and commit to local can you change or rename branch name
         git pull origin main
@@ -118,8 +119,8 @@ Before doing this, make sure you have set `user.name` and `user.email` in git se
         Or you can start with `git clone` but not `git init`.
 
         ```bash
-        git clone url_of_the_repository
-        cd name_of_the_repository
+        git clone <repository url>
+        cd <repository name>
 
         echo "test" >> test.txt
         git add text.txt
@@ -132,9 +133,9 @@ Before doing this, make sure you have set `user.name` and `user.email` in git se
     2. Start with `git init` by creating a local folder(you'd better build a folder with the same name as the remote repository).  
 
         ```Bash
-        mkdir name_of_the_repository && cd name_of_the_repository
+        mkdir <repository name> && cd <repository name>
         git init
-        git remote add origin url_of_the_repository  # you can choose HTTPS/SSH here 
+        git remote add origin <repository url>  # you can choose either HTTPS/SSH here 
 
         # only after pulling the remote branch and commit to local can you change or rename branch name
         git pull origin main
@@ -146,22 +147,75 @@ Before doing this, make sure you have set `user.name` and `user.email` in git se
         git push -u origin main
         ```
 
-### 2.2 建立本地仓库
+### 2.2 Creating a new branch
 
-- 使用本地文件夹  
+1. Check your current branch with command `git branch`.  
+2. Copy current branch to a new branch and check out the new branch.  
 
-   ```bash
-   cd <path>
-   git init
-   ```
+    ```Bash
+    # method 1
+    git chechuot -b <new-branch> # -b means create new branch
 
-- 克隆远程仓库
+    # method 2
+    git switch -c <new-branch>
+    git switch --create <new-branch>
 
-    ```bash
-    git clone <the web URL>
+    # method 3
+    git branch <new-branch>
+    git switch <new-branch>
     ```
 
-### 2.3 工作流  
+### 2.3 Basic snapshotting
+
+1. When some files are changed, use `git add` command.
+
+    ```Bash
+    git add <changed files>
+    git add .  # add all changed files to index
+    ```
+
+2. Record all changes in the index to the repository.
+
+    ```Bash
+    git commit <commit message>
+    ```
+
+3. Push local repository to remote
+
+    ```Bash
+    git push origin <branch name>
+    ```
+
+### 2.4 Make a pull request
+
+1. Make `New pull request` on Github.
+2. The host of that repository accept the new pull request then `Squash and merge`.
+3. After the new branch is merged to main branch, first delete the new branch on Github. Then delete the new branch locally.
+
+    ```Bash
+    git checkout main
+    git branch -D <branch name>
+    git pull origin main  # pull the new commit to local main
+    ```
+
+### 2.5 Conflicts
+
+1. Make sure local main branch is up to date.
+
+    ```Bash
+    git checkout main  # switch branch to main
+    git pull origin main 
+    ```
+
+2. Reapply new commits on main branch to new branch
+
+    ```Bash
+    git checkout <branch name>
+    git rebase main
+    git push -f origin <branch name>  # force push local repo to remote
+    ```
+
+### 2.3 旧内容
 
 将改动提交到本地`HEAD`
 
@@ -176,4 +230,18 @@ git commit -m "<tips>"
 
 ```bash
 git push origin master
+```
+
+## 3 Useful commands
+
+```Bash
+
+git diff  # show changes between commits, commit and working tree
+# run :q to exit
+
+git add <file name>  # add file content to the index
+git branch  # show current branch
+
+git pull origin main  # pull remote repository to local
+git push origin main  # push local repository to remote
 ```
